@@ -12,9 +12,11 @@ RSpec.configure do |config|
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
+  # Carregamento da classe antes da execução dos testes
   config.before(:all) do
     class HttParty
       include HTTParty
+      # URL padrão da API da Marvel
       base_uri 'https://gateway.marvel.com'
     end
   end
